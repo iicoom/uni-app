@@ -3,7 +3,7 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view>
 			<text class="title">{{title}}</text>
-      <tab-bar/>
+      <tab-bar :selected="1"/>
       <u-button type="primary">主要按钮</u-button>
     </view>
 	</view>

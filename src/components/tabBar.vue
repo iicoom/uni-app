@@ -1,7 +1,8 @@
 <template>
   <view class="tab-bar">
     <view v-for="(item,index) in list" :key="index" class="tab-bar-item" @click="switchTab(item, index)">
-      <image class="tab_img" :src="selected === index ? item.selectedIconPath : item.iconPath"></image>
+      <image v-if="selected === index" class="tab_img_s" :src="item.selectedIconPath"></image>
+      <image v-else class="tab_img" :src="item.iconPath"></image>
       <view class="tab_text" :style="{color: selected === index ? selectedColor : color}">{{item.text}}</view>
     </view>
   </view>
@@ -26,13 +27,18 @@ export default {
       selectedColor: "#333333",
       list: [{
         pagePath: "/pages/patientHome/patientHome",
-        iconPath: "/static/images/home.png",
-        selectedIconPath: "/static/images/home_s.png",
+        iconPath: "/static/tab_bar/home1.png",
+        selectedIconPath: "/static/images/home2.png",
         text: "首页"
       }, {
         pagePath: "/pages/mine/mine",
-        iconPath: "/static/images/mine.png",
-        selectedIconPath: "/static/images/mine_s.png",
+        iconPath: "/static/tab_bar/home1.png",
+        selectedIconPath: "/static/tab_bar/home2.png",
+        text: "新增"
+      }, {
+        pagePath: "/pages/mine/mine",
+        iconPath: "/static/tab_bar/personal1.png",
+        selectedIconPath: "/static/tab_bar/personal2.png",
         text: "我的"
       }]
     }
@@ -41,6 +47,7 @@ export default {
     switchTab(item, index) {
       console.log("item", item)
       console.log("index", index)
+      this.selected = index
       let url = item.pagePath;
       uni.switchTab({
         url
@@ -57,18 +64,17 @@ export default {
   left: 0;
   right: 0;
   height: 100rpx;
-  background: #de7272;
+  background-color: #de7272;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: env(safe-area-inset-bottom);
   .tab-bar-item {
     flex: 1;
-    text-align: center;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     .tab_img {
       width: 37rpx;
       height: 41rpx;
@@ -76,6 +82,14 @@ export default {
     .tab_text {
       font-size: 20rpx;
       margin-top: 9rpx;
+    }
+    .tab_img_s {
+      width: 37rpx;
+      height: 41rpx;
+      border-radius: 50%;
+      padding: 6rpx 8rpx;
+      transform: scale(1.2) translateY(-10rpx);
+      background-color: #de7272;
     }
   }
 }
