@@ -4,7 +4,7 @@
 		<view>
 			<text class="title">{{title}}</text>
       <tab-bar/>
-
+      <u-button type="primary">主要按钮</u-button>
     </view>
 	</view>
 </template>

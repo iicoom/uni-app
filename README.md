@@ -22,6 +22,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Syntax Error: TypeError: this.getOptions is not a function
 [解决方法](https://blog.csdn.net/qq_38157825/article/details/114318772)
 
+### pages.json中设置启动页
+```
+// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+```
+
 ### 在pages.json中配置了tabBar不显示，display: none。是因为当前展示的页面不在配置的tabBar list中。
 ```json
 "tabBar": {
