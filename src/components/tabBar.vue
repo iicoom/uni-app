@@ -1,7 +1,7 @@
 <template>
   <view class="tab-bar">
     <view v-for="(item,index) in list" :key="index" class="tab-bar-item" @click="switchTab(item, index)">
-      <image v-if="selected === index" class="tab_img_s" :src="item.selectedIconPath"></image>
+      <image v-if="active === index" class="tab_img_s" :src="item.selectedIconPath"></image>
       <image v-else class="tab_img" :src="item.iconPath"></image>
       <view class="tab_text" :style="{color: selected === index ? selectedColor : color}">{{item.text}}</view>
     </view>
@@ -40,14 +40,14 @@ export default {
         iconPath: "/static/tab_bar/personal1.png",
         selectedIconPath: "/static/tab_bar/personal2.png",
         text: "我的"
-      }]
+      }],
+      active: 1
     }
   },
   methods: {
     switchTab(item, index) {
       console.log("item", item)
-      console.log("index", index)
-      this.selected = index
+      this.active = index
       let url = item.pagePath;
       uni.switchTab({
         url
@@ -66,30 +66,27 @@ export default {
   height: 100rpx;
   background-color: #de7272;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: env(safe-area-inset-bottom);
+  justify-content: space-around;
+  align-items: baseline;
   .tab-bar-item {
-    flex: 1;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    height: auto;
     .tab_img {
-      width: 37rpx;
-      height: 41rpx;
+      width: 45rpx;
+      height: 45rpx;
     }
     .tab_text {
       font-size: 20rpx;
-      margin-top: 9rpx;
     }
     .tab_img_s {
-      width: 37rpx;
-      height: 41rpx;
+      width: 50rpx;
+      height: 50rpx;
       border-radius: 50%;
-      padding: 6rpx 8rpx;
-      transform: scale(1.2) translateY(-10rpx);
+      padding: 10rpx;
+      box-sizing: border-box;
+      transform: scale(1.3) translateY(-15rpx);
       background-color: #de7272;
+      transition: all 100ms cubic-bezier(.05,1.19,.45,1.04);
     }
   }
 }
