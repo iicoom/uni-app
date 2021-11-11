@@ -1,19 +1,23 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+  <view class="content">
+    <nav-bar />
+    <image class="logo" src="/static/logo.png"></image>
+    <view>
+      <text class="title">{{title}}</text>
       <tab-bar :selected="1"/>
       <u-button type="primary">主要按钮</u-button>
     </view>
-	</view>
+  </view>
 </template>
 
 <script>
 import tabBar from "../../components/tabBar.vue"
+import navBar from "../../components/navBar";
+import NavBar from "../../components/navBar";
 
 export default {
   components: {
+    NavBar,
     tabBar
   },
   data() {

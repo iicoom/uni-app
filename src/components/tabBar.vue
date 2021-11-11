@@ -28,7 +28,7 @@ export default {
       list: [{
         pagePath: "/pages/patientHome/patientHome",
         iconPath: "/static/tab_bar/home1.png",
-        selectedIconPath: "/static/images/home2.png",
+        selectedIconPath: "/static/tab_bar/shouye.gif",
         text: "首页"
       }, {
         pagePath: "/pages/mine/mine",
@@ -64,10 +64,10 @@ export default {
   left: 0;
   right: 0;
   height: 100rpx;
-  background-color: #de7272;
+  background-color: #fff;
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: flex-end;
   .tab-bar-item {
     text-align: center;
     height: auto;
@@ -77,6 +77,7 @@ export default {
     }
     .tab_text {
       font-size: 20rpx;
+      padding-bottom: 10rpx;
     }
     .tab_img_s {
       width: 50rpx;
@@ -85,7 +86,7 @@ export default {
       padding: 10rpx;
       box-sizing: border-box;
       transform: scale(1.3) translateY(-15rpx);
-      background-color: #de7272;
+      background-color: yellow;
       transition: all 100ms cubic-bezier(.05,1.19,.45,1.04);
     }
   }
