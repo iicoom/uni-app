@@ -31,7 +31,7 @@ export default {
         selectedIconPath: "/static/tab_bar/shouye.gif",
         text: "首页"
       }, {
-        pagePath: "/pages/mine/mine",
+        pagePath: "/pages/article/articleList",
         iconPath: "/static/tab_bar/home1.png",
         selectedIconPath: "/static/tab_bar/home2.png",
         text: "新增"
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     switchTab(item, index) {
-      console.log("item", item)
+      console.log("item", item.pagePath)
       this.active = index
       let url = item.pagePath;
       uni.switchTab({
@@ -60,11 +60,12 @@ export default {
 <style lang="scss">
 .tab-bar {
   position: fixed;
+  z-index: 100;
   bottom: 0;
   left: 0;
   right: 0;
   height: 100rpx;
-  background-color: #fff;
+  background-color: #000;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -85,7 +86,7 @@ export default {
       border-radius: 50%;
       padding: 10rpx;
       box-sizing: border-box;
-      transform: scale(1.3) translateY(-15rpx);
+      transform: scale(1.3) translateY(-5rpx);
       background-color: yellow;
       transition: all 100ms cubic-bezier(.05,1.19,.45,1.04);
     }

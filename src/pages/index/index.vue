@@ -2,12 +2,7 @@
   <view class="content">
     <nav-bar />
     <article-list/>
-    <image class="logo" src="/static/logo.png"></image>
-    <view>
-      <text class="title">{{title}}</text>
-      <tab-bar :selected="1"/>
-      <u-button type="primary">主要按钮</u-button>
-    </view>
+    <tab-bar :selected="1"/>
   </view>
 </template>
 
@@ -24,11 +19,30 @@ export default {
   },
   data() {
     return {
-      title: 'Hello'
     }
   },
   onLoad() {
 
+  },
+  onReachBottom() {
+    console.log('====----', this.page)
+    if(this.page >= 3) return ;
+    this.status = 'loading';
+    this.page = ++ this.page;
+    setTimeout(() => {
+      this.list += 10;
+      if(this.page >= 3) this.status = 'nomore';
+      else this.status = 'loading';
+    }, 2000)
+  },
+  onPullDownRefresh() {
+    console.log('====', this.page)
+    //监听用户下拉动作，一般用于下拉刷新
+    // Object.assign(this.params, {page: 1, limit: 10});
+    // this.fetchData();
+    this.$nextTick(() => {
+      uni.stopPullDownRefresh();
+    })
   },
   methods: {
 
@@ -37,26 +51,5 @@ export default {
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>

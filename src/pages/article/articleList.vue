@@ -1,6 +1,12 @@
 <template>
-  <view>
-    <u-empty text="所谓伊人，在水一方" mode="list"></u-empty>
+  <view class="container">
+    <u-empty v-if="articleList.length===0" text="所谓伊人，在水一方" mode="list"></u-empty>
+    <u-card v-for="(item,index) in articleList" :key="index" :title="item.title" :sub-title="subTitle"
+            thumb="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg">
+      <view class="" slot="body">
+        <view class="u-body-item-title u-line-2">{{ item.abstract }}</view>
+      </view>
+    </u-card>
     <u-loadmore :status="status" :icon-type="iconType" :load-text="loadText" />
   </view>
 </template>
@@ -14,13 +20,12 @@ export default {
   mixins: [handleData],
   data() {
     return {
-      status: 'loadmore',
-      iconType: 'flower',
-      loadText: {
-        loadmore: '轻轻上拉',
-        loading: '努力加载中',
-        nomore: '实在没有了'
-      }
+      params: {
+        page: 1,
+        limit: 10,
+      },
+      title: 'la',
+      subTitle: 'lll'
     }
   },
   mounted() {
@@ -36,15 +41,26 @@ export default {
       else this.status = 'loading';
     }, 2000)
   },
+  onPullDownRefresh() {
+    console.log('====', this.page)
+    //监听用户下拉动作，一般用于下拉刷新
+    Object.assign(this.params, {page: 1, limit: 10});
+    this.fetchData();
+    this.$nextTick(() => {
+      uni.stopPullDownRefresh();
+    })
+  },
   methods: {
     async fetchData() {
-      let res = await getArticleList();
-      this.handleDataList(res, 'list');
+      let res = await getArticleList(this.params);
+      this.handleDataList(res);
     },
   }
 }
 </script>
 
 <style scoped>
-
+.container {
+  height: 95vh;
+}
 </style>

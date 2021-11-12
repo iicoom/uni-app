@@ -8,7 +8,16 @@
 			"style": {
 				"navigationStyle": "custom" ,
 				"navigationBarTitleText": "uni-app",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/article/articleList",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "文章列表"
 			}
 		}
 	],
@@ -17,5 +26,27 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#66CCFF",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "/pages/patientHome/patientHome",
+			"iconPath": "/static/tab_bar/home1.png",
+			"selectedIconPath": "/static/tab_bar/shouye.gif",
+			"text": "首页"
+		}, {
+			"pagePath": "/pages/article/articleList",
+			"iconPath": "/static/tab_bar/home1.png",
+			"selectedIconPath": "/static/tab_bar/home2.png",
+			"text": "新增"
+		}, {
+			"pagePath": "/pages/mine/mine",
+			"iconPath": "/static/tab_bar/personal1.png",
+			"selectedIconPath": "/static/tab_bar/personal2.png",
+			"text": "我的"
+		}]
 	}
 }

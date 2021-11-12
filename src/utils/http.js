@@ -86,7 +86,7 @@ http.interceptor.response = (response) => {
 /* app-h5接口 begin */
 export const getArticleList = (data) => {
     return http.request({
-        url: `blog/list?page=1&limit=5&status=1`,
+        url: `blog/list`,
         method: 'GET',
         data,
         // showLoading: true,

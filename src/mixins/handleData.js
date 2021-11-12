@@ -6,16 +6,21 @@
 const handleData = {
     data() {
         return {
+            status: 'loadmore',
+            iconType: 'flower',
+            loadText: {
+                loadmore: '轻轻上拉',
+                loading: '努力加载中',
+                nomore: '实在没有了'
+            },
             articleList: [],
         }
     },
     methods: {
         handleDataList(res, type) {
-            if (this.params.hasOwnProperty('page') && this.params.page == 1) {
-                this.articleList = [];
-            }
-            if (res && res[type] && res[type].length) {
-                this.articleList = this.articleList.concat(res[type]);
+            console.log(res)
+            if (res && res.list.length > 0) {
+                this.articleList = this.articleList.concat(res.list);
                 if (res.total <= this.articleList.length) {
                     this.status = 'nomore';
                 } else {
@@ -28,6 +33,7 @@ const handleData = {
                     this.handleEmpty();
                 }
             }
+            console.log(this.articleList)
         },
         handleEmpty() {
             this.articleList = [];
