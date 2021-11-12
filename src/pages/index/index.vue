@@ -1,6 +1,7 @@
 <template>
   <view class="content">
     <nav-bar />
+    <article-list/>
     <image class="logo" src="/static/logo.png"></image>
     <view>
       <text class="title">{{title}}</text>
@@ -13,12 +14,13 @@
 <script>
 import tabBar from "../../components/tabBar.vue"
 import navBar from "../../components/navBar";
-import NavBar from "../../components/navBar";
+import articleList from "../article/articleList";
 
 export default {
   components: {
-    NavBar,
-    tabBar
+    navBar,
+    tabBar,
+    articleList
   },
   data() {
     return {
