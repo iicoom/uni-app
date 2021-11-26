@@ -23,22 +23,22 @@ export default {
   },
   data() {
     return {
-      color: "#333333",
-      selectedColor: "#333333",
+      color: "#d3f600",
+      selectedColor: "#f9e000",
       list: [{
-        pagePath: "/pages/patientHome/patientHome",
-        iconPath: "/static/tab_bar/home1.png",
+        pagePath: "/pages/start/start",
+        iconPath: "/static/tab_bar/home.png",
         selectedIconPath: "/static/tab_bar/shouye.gif",
-        text: "首页"
+        text: "探索"
       }, {
         pagePath: "/pages/article/articleList",
-        iconPath: "/static/tab_bar/home1.png",
-        selectedIconPath: "/static/tab_bar/home2.png",
-        text: "新增"
+        iconPath: "/static/tab_bar/home.png",
+        selectedIconPath: "/static/tab_bar/home_active.png",
+        text: "好友"
       }, {
         pagePath: "/pages/mine/mine",
-        iconPath: "/static/tab_bar/personal1.png",
-        selectedIconPath: "/static/tab_bar/personal2.png",
+        iconPath: "/static/tab_bar/mine.png",
+        selectedIconPath: "/static/tab_bar/mine_active.png",
         text: "我的"
       }],
       active: 1
@@ -51,6 +51,9 @@ export default {
       let url = item.pagePath;
       uni.switchTab({
         url
+      })
+      uni.navigateTo({
+        url: url
       })
     }
   }

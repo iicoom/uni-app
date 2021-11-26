@@ -39,14 +39,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     "list": [
         {
             "pagePath": "pages/index/index",
-            "iconPath": "static/tab_bar/home1.png",
-            "selectedIconPath": "static/tab_bar/home2.png",
+            "iconPath": "static/tab_bar/home.png",
+            "selectedIconPath": "static/tab_bar/home_active.png",
             "text": "首页"
         },
         {
             "pagePath": "pages/user/user",
-            "iconPath": "static/tab_bar/personal1.png",
-            "selectedIconPath": "static/tab_bar/personal2.png",
+            "iconPath": "static/tab_bar/mine.png",
+            "selectedIconPath": "static/tab_bar/mine_active.png",
             "text": "我的"
         }
     ],

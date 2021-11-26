@@ -5,7 +5,7 @@
  */
 import http from "./interface";
 
-http.config.baseUrl = 'https://www.maoshare.xyz/api/';
+http.config.baseUrl = 'https://www.iicoom.top/api/';
 
 // 设置响应拦截器
 http.interceptor.response = (response) => {
@@ -89,7 +89,5 @@ export const getArticleList = (data) => {
         url: `blog/list`,
         method: 'GET',
         data,
-        // showLoading: true,
-        // loadingText: '加载中...'
     })
 }
