@@ -18,6 +18,10 @@ yarn build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## TODO
+1. 获取微信手机号授权
+2. 获取微信位置
+
 ## 问题记录
 ### Syntax Error: TypeError: this.getOptions is not a function
 [解决方法](https://blog.csdn.net/qq_38157825/article/details/114318772)
@@ -39,14 +43,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     "list": [
         {
             "pagePath": "pages/index/index",
-            "iconPath": "static/tab_bar/home1.png",
-            "selectedIconPath": "static/tab_bar/home2.png",
+            "iconPath": "static/tab_bar/home.png",
+            "selectedIconPath": "static/tab_bar/home_active.png",
             "text": "首页"
         },
         {
             "pagePath": "pages/user/user",
-            "iconPath": "static/tab_bar/personal1.png",
-            "selectedIconPath": "static/tab_bar/personal2.png",
+            "iconPath": "static/tab_bar/mine.png",
+            "selectedIconPath": "static/tab_bar/mine_active.png",
             "text": "我的"
         }
     ],

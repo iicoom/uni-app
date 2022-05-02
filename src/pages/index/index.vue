@@ -1,20 +1,18 @@
 <template>
-  <view class="content">
-    <nav-bar />
-    <article-list/>
-    <tab-bar :selected="1"/>
+  <view class="index_wrapper">
+    <article-list />
   </view>
 </template>
 
 <script>
-import tabBar from "../../components/tabBar.vue"
+// import tabBar from "../../components/tabBar.vue"
 import navBar from "../../components/navBar";
 import articleList from "../article/articleList";
 
 export default {
   components: {
     navBar,
-    tabBar,
+    // tabBar,
     articleList
   },
   data() {
@@ -51,5 +49,7 @@ export default {
 </script>
 
 <style>
+.index_wrapper {
 
+}
 </style>

@@ -27,18 +27,18 @@ export default {
       selectedColor: "#333333",
       list: [{
         pagePath: "/pages/patientHome/patientHome",
-        iconPath: "/static/tab_bar/home1.png",
+        iconPath: "/static/tab_bar/home.png",
         selectedIconPath: "/static/tab_bar/shouye.gif",
         text: "首页"
       }, {
         pagePath: "/pages/article/articleList",
-        iconPath: "/static/tab_bar/home1.png",
-        selectedIconPath: "/static/tab_bar/home2.png",
+        iconPath: "/static/tab_bar/home.png",
+        selectedIconPath: "/static/tab_bar/home_active.png",
         text: "新增"
       }, {
         pagePath: "/pages/mine/mine",
-        iconPath: "/static/tab_bar/personal1.png",
-        selectedIconPath: "/static/tab_bar/personal2.png",
+        iconPath: "/static/tab_bar/mine.png",
+        selectedIconPath: "/static/tab_bar/mine_active.png",
         text: "我的"
       }],
       active: 1
