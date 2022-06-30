@@ -18,7 +18,6 @@ const handleData = {
     },
     methods: {
         handleDataList(res, type) {
-            console.log(res)
             if (res && res.list.length > 0) {
                 this.articleList = this.articleList.concat(res.list);
                 if (res.total <= this.articleList.length) {
@@ -33,7 +32,6 @@ const handleData = {
                     this.handleEmpty();
                 }
             }
-            console.log(this.articleList)
         },
         handleEmpty() {
             this.articleList = [];

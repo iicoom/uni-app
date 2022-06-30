@@ -42,7 +42,6 @@ export default {
     }, 2000)
   },
   onPullDownRefresh() {
-    console.log('====', this.page)
     //监听用户下拉动作，一般用于下拉刷新
     Object.assign(this.params, {page: 1, limit: 10});
     this.fetchData();

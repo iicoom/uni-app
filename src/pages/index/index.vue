@@ -1,55 +1,39 @@
 <template>
   <view class="index_wrapper">
     <article-list />
+    <!--
+    <tabBar/>
+    -->
   </view>
 </template>
 
 <script>
-// import tabBar from "../../components/tabBar.vue"
+import tabBar from "../../components/tabBar.vue"
 import navBar from "../../components/navBar";
 import articleList from "../article/articleList";
 
 export default {
   components: {
     navBar,
-    // tabBar,
+    tabBar,
     articleList
   },
   data() {
-    return {
-    }
+    return {}
   },
-  onLoad() {
-
-  },
+  onInit() {},
+  onLoad() {},
+  // 只有在page中的方法才会被触发
   onReachBottom() {
-    console.log('====----', this.page)
-    if(this.page >= 3) return ;
-    this.status = 'loading';
-    this.page = ++ this.page;
-    setTimeout(() => {
-      this.list += 10;
-      if(this.page >= 3) this.status = 'nomore';
-      else this.status = 'loading';
-    }, 2000)
+    console.log('====onReachBottom')
   },
   onPullDownRefresh() {
-    console.log('====', this.page)
-    //监听用户下拉动作，一般用于下拉刷新
-    // Object.assign(this.params, {page: 1, limit: 10});
-    // this.fetchData();
-    this.$nextTick(() => {
-      uni.stopPullDownRefresh();
-    })
+    console.log('====onPullDownRefresh')
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 
 <style>
-.index_wrapper {
 
-}
 </style>

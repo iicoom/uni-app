@@ -4,6 +4,15 @@
 	},
 	"pages": [
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom" ,
+				"navigationBarTitleText": "uni-app",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
 			"path": "pages/newbie/phone",
 			"style": {
 				"navigationStyle": "custom" ,
@@ -32,15 +41,6 @@
 		},
 		{
 			"path": "pages/newbie/location",
-			"style": {
-				"navigationStyle": "custom" ,
-				"navigationBarTitleText": "uni-app",
-				"navigationBarTextStyle": "white",
-				"enablePullDownRefresh": true
-			}
-		},
-		{
-			"path": "pages/index/index",
 			"style": {
 				"navigationStyle": "custom" ,
 				"navigationBarTitleText": "uni-app",
