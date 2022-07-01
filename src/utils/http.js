@@ -83,13 +83,5 @@ http.interceptor.response = (response) => {
         })
     }
 }
-/* app-h5接口 begin */
-export const getArticleList = (data) => {
-    return http.request({
-        url: `blog/list`,
-        method: 'GET',
-        data,
-        // showLoading: true,
-        // loadingText: '加载中...'
-    })
-}
+
+export default http

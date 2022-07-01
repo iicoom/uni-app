@@ -1,27 +1,27 @@
-/* 收集信息页面 */
-.dot {
-    margin-bottom: 20px;
-}
-.dot::before,.dot::after {
-    content: '•';
-    font-weight: bolder;
-    color: #1be9c9;
-    padding: 0 10px;
-}
+/*!* 收集信息页面 *!*/
+/*.dot {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+/*.dot::before,.dot::after {*/
+/*    content: '•';*/
+/*    font-weight: bolder;*/
+/*    color: #1be9c9;*/
+/*    padding: 0 10px;*/
+/*}*/
 
-/* 字体大小 */
-.h3 {
-    font-size: 36rpx;
-    display: block;
-    font-weight: bolder;
-}
+/*!* 字体大小 *!*/
+/*.h3 {*/
+/*    font-size: 36rpx;*/
+/*    display: block;*/
+/*    font-weight: bolder;*/
+/*}*/
 
-/* 居中对齐 */
-.center {
-    margin: 0 auto;
-}
+/*!* 居中对齐 *!*/
+/*.center {*/
+/*    margin: 0 auto;*/
+/*}*/
 
-.custom_button center {
-    color: #2a2d33;
-    width: 400rpx;
-}
+/*.custom_button center {*/
+/*    color: #2a2d33;*/
+/*    width: 400rpx;*/
+/*}*/
